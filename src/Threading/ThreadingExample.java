@@ -115,9 +115,9 @@ class TelevisionTHREADSAFE extends Television{
     }
 
     @Override
-    public synchronized void setCurrentChannel(Integer currentChannel, Child c) {
+    public synchronized void setCurrentChannel(Integer currentChannel) {
         synchronized (this){
-            super.setCurrentChannel(currentChannel, c);
+            super.setCurrentChannel(currentChannel);
         }
     }
 }
@@ -133,7 +133,7 @@ class Television{
         return currentChannel;
     }
 
-    void setCurrentChannel(Integer currentChannel, Child c) {
+    void setCurrentChannel(Integer currentChannel) {
         this.currentChannel = currentChannel;
     }
 
